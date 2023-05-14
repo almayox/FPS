@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CategoryGrid: View {
+    
 
     var body: some View {
         
@@ -18,8 +19,10 @@ struct CategoryGrid: View {
         ScrollView {
             LazyVGrid(columns: columns, spacing: 10) {
                 ForEach(0..<10) { _ in
-                    Color.blue
-                        .frame(height: 200)
+                    Image("placeholder")
+                        .resizable()
+                        .frame(width: 180, height: 200)
+                        
                 }
             }
             .padding(.horizontal, 10)
