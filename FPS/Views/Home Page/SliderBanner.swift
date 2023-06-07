@@ -16,11 +16,11 @@ struct SliderBanner: View {
     var body: some View {
         TabView(selection: $currentIndex) {
             ForEach(0..<5) { num in
-                Image("\(num)")
-                    .resizable()
-                    .scaledToFill()
-                    .overlay(Color.black.opacity(0.2))
-                    .tag(num)
+                Text("\(num)")
+                    //.resizable()
+                    //.scaledToFill()
+                    //.overlay(Color.black.opacity(0.2))
+                    //.tag(num)
             }
         }.tabViewStyle(PageTabViewStyle())
                 .frame(width: .infinity, height: 250)

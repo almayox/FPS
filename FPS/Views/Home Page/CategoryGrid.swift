@@ -8,6 +8,27 @@
 import SwiftUI
 
 struct CategoryGrid: View {
+    @State var data = Categories(id: Id(), name: Name(), photo: Photo())
+    
+    func getData() {
+        let urlString = "https://fps.vantabox.online/wp-json/wc/v3/products/categories"
+        let url = URL(string: urlString)
+        
+        URLSession.shared.dataTask(with: url!) {data, _, error in
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    let decodedData = try decoder.decode(Categories.self, from: data)
+                    self.data = decodedData
+                }
+                catch {
+                    print("decoding error! Check the json")
+                }
+            }
+        }
+    }
+    
+   //---------------------------------------------
     
 
     var body: some View {
@@ -18,15 +39,19 @@ struct CategoryGrid: View {
 
         ScrollView {
             LazyVGrid(columns: columns, spacing: 10) {
-                ForEach(0..<10) { _ in
-                    Image("placeholder")
-                        .resizable()
-                        .frame(width: 180, height: 200)
-                        
+                ForEach(0..<6) {category in
+                    Button {
+                        // action
+                    } label: {
+                        // image goes here
+                        Text("\(data.name.name)")
+                    }
+
                 }
             }
             .padding(.horizontal, 10)
         }
+        
     }
 }
 

@@ -7,17 +7,8 @@
 
 import Foundation
 
-class CategoryViewModel: ObservableObject {
+ 
+
     
-    @Published var list = [CategoryGridModel]()
     
-    func retrievedImages() {
-        
-        // get data from the database
-        
-        // get the image data in storage for each image
-        
-        // Display the images
-    }
-}
 

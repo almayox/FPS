@@ -9,30 +9,9 @@ import SwiftUI
 
 struct HomePageView: View {
     
-    @State var selectedTab: Tab = .house
-    init() {
-        UITabBar.appearance().isHidden = true
-    }
-    
     var body: some View {
-        ZStack {
-            
-            VStack {
-                TabView(selection: $selectedTab) {
-                    ForEach(Tab.allCases, id: \.rawValue) { tab in
-                        HStack {
-                            SliderBanner()
-                              
-                        }
-                        .tag(tab)
-                    }
-                }
-            }
-            VStack {
-                Spacer()
-                TabBar(selectedTab: $selectedTab)
-            }
-        }
+       
+        Text("place holder")
     }
 }
 struct HomePageView_Previews: PreviewProvider {

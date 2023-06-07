@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct CategoryGridModel {
+struct Categories: Hashable, Codable {
     
     var id: String
     var name: String
